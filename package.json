@@ -1,0 +1,23 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "## Trees",
+  "main": "index.js",
+  "scripts": {
+    "bst": "ts-node bst"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davisbento/node-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davisbento/node-algorithms/issues"
+  },
+  "homepage": "https://github.com/davisbento/node-algorithms#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
