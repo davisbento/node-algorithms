@@ -39,6 +39,31 @@ class BinarySearchTree {
 		return node;
 	}
 
+	public isValidBST(root: TreeNode | null): boolean {
+		const stack: TreeNode[] = [];
+		let prev: TreeNode | null = null;
+		let current: TreeNode | null = root;
+
+		while (current !== null || stack.length > 0) {
+			while (current !== null) {
+				stack.push(current);
+				current = current.left;
+			}
+
+			current = stack.pop()!;
+
+			// Check if current node violates BST property
+			if (prev !== null && current.data <= prev.data) {
+				return false;
+			}
+
+			prev = current;
+			current = current.right;
+		}
+
+		return true;
+	}
+
 	public search(node: TreeNode | null = this.root, value: number): TreeNode | null {
 		let temp = node;
 		if (temp === null) {
@@ -100,12 +125,13 @@ const bst = new BinarySearchTree(rootNode);
 bst.insert(bst.root, 30);
 bst.insert(bst.root, 31);
 bst.insert(bst.root, 20);
-// bst.insert(bst.root, 40);
-// bst.insert(bst.root, 70);
-// bst.insert(bst.root, 60);
-// bst.insert(bst.root, 80);
+bst.insert(bst.root, 40);
+bst.insert(bst.root, 70);
+bst.insert(bst.root, 60);
+bst.insert(bst.root, 80);
 
 // console.log(JSON.stringify(bst, null, 2));
 // // bst.postorderTraversal();
 
-console.log(bst.search(bst.root, 70));
+// console.log(bst.search(bst.root, 70));
+console.log(bst.isValidBST(bst.root));
