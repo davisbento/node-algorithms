@@ -7,3 +7,7 @@
 ## Tables
 
 [Hash Table](/hashtable/)
+
+## Linked List
+
+[Linked List](/linkedlist/)
