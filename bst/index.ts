@@ -1,6 +1,6 @@
 /* Binary Search Tree */
 
-class TreeNode {
+export class TreeNode {
 	public data: number;
 	public left: TreeNode | null;
 	public right: TreeNode | null;
@@ -12,7 +12,7 @@ class TreeNode {
 	}
 }
 
-class BinarySearchTree {
+export class BinarySearchTree {
 	public root: TreeNode | null;
 
 	constructor(head?: TreeNode | null) {
@@ -27,7 +27,6 @@ class BinarySearchTree {
 
 		// IN A BST, THE LEFT NODE IS ALWAYS LESS THAN THE PARENT NODE
 		// AND THE RIGHT NODE IS ALWAYS GREATER THAN THE PARENT NODE
-
 		if (value < node.data) {
 			node.left = this.insert(node.left, value);
 		}
@@ -96,6 +95,31 @@ class BinarySearchTree {
 			console.log(temp.data);
 			this.inorderTraversal(temp.right);
 		}
+	}
+
+	public inorderTraversalReturnString(node: TreeNode | null = this.root): string {
+		let temp = node;
+		let result = '';
+		if (temp) {
+			result += this.inorderTraversalReturnString(temp.left);
+			result += temp.data + ' ';
+			result += this.inorderTraversalReturnString(temp.right);
+		}
+
+		return result;
+	}
+
+	public preorderTraversalReturnString(node: TreeNode | null = this.root): string {
+		let temp = node;
+		let result = '';
+
+		if (temp) {
+			result += temp.data + ' ';
+			result += this.preorderTraversalReturnString(temp.left);
+			result += this.preorderTraversalReturnString(temp.right);
+		}
+
+		return result;
 	}
 
 	public preorderTraversal(node: TreeNode | null = this.root): void {
