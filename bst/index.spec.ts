@@ -8,6 +8,12 @@ describe('BST', () => {
 		expect(rootNode.right).toBeNull();
 	});
 
+	test('should instance a new tree without an explicit root node', () => {
+		const bst = new BinarySearchTree();
+		bst.insert(bst.root, 1);
+		expect(bst.root!.data).toBe(1);
+	});
+
 	test('should instance a new tree node with left/right nodes', () => {
 		const rootNode = new TreeNode(1);
 		rootNode.left = new TreeNode(2);

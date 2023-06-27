@@ -22,6 +22,7 @@ export class BinarySearchTree {
 	public insert(node: TreeNode | null = this.root, value: number): TreeNode {
 		if (!node) {
 			const root = new TreeNode(value);
+			this.root = root;
 			return root;
 		}
 
