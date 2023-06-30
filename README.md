@@ -10,6 +10,10 @@ npm run test
 
 ## Trees
 
+[Problem Solving](/problem-solving/)
+
+## Trees
+
 [Binary Search Tree](/bst/)
 
 ## Tables

@@ -49,18 +49,39 @@ describe('dinner-plates', () => {
 		dinnerPlates.push(3);
 		dinnerPlates.push(4);
 		dinnerPlates.push(5);
-		dinnerPlates.popAtStack(0);
 
+		// now the stacks should look like this:
+		// [1, 2]
+		// [3, 4]
+		// [5]
+		expect(dinnerPlates.getStacks()[0]).toEqual([1, 2]);
+		expect(dinnerPlates.getStacks()[1]).toEqual([3, 4]);
+		expect(dinnerPlates.getStacks()[2]).toEqual([5]);
+
+		expect(dinnerPlates.popAtStack(0)).toEqual(2);
+
+		// 20 should be pushed into the first stack because it has space in the leftmost available index
 		dinnerPlates.push(20);
-		dinnerPlates.push(21);
-		dinnerPlates.popAtStack(0);
-		dinnerPlates.popAtStack(2);
-		dinnerPlates.pop();
-		dinnerPlates.pop();
-		dinnerPlates.pop();
-		dinnerPlates.pop();
-		dinnerPlates.pop();
+		expect(dinnerPlates.getStacks()[0]).toEqual([1, 20]);
 
-		dinnerPlates.print();
+		// 21 should be pushed into the third stack because it has space in the leftmost available index
+		dinnerPlates.push(21);
+		expect(dinnerPlates.getStacks()[2]).toEqual([5, 21]);
+
+		// now the stacks should look like this:
+		// [1, 20]
+		// [3, 4]
+		// [5, 21]
+
+		expect(dinnerPlates.popAtStack(0)).toEqual(20);
+		expect(dinnerPlates.popAtStack(2)).toEqual(21);
+		expect(dinnerPlates.pop()).toEqual(5);
+		expect(dinnerPlates.pop()).toEqual(4);
+		expect(dinnerPlates.pop()).toEqual(3);
+		expect(dinnerPlates.pop()).toEqual(1);
+		// empty stack
+		expect(dinnerPlates.pop()).toEqual(-1);
+		// empty stack
+		expect(dinnerPlates.pop()).toEqual(-1);
 	});
 });
