@@ -22,7 +22,7 @@ export class DinnerPlates {
 		return idx;
 	}
 
-	push(val: number): void {
+	public push(val: number): void {
 		const nextIndexAvailable = this.getNextIndexAvailable();
 		if (nextIndexAvailable === -1) {
 			this.stacks.push([val]);
@@ -31,7 +31,7 @@ export class DinnerPlates {
 		this.stacks[nextIndexAvailable].push(val);
 	}
 
-	pop(): number {
+	public pop(): number {
 		if (this.stacks.length === 0) {
 			return -1;
 		}
@@ -52,7 +52,7 @@ export class DinnerPlates {
 		return numberRemoved;
 	}
 
-	popAtStack(index: number): number {
+	public popAtStack(index: number): number {
 		const stackToRemove = this.stacks[index];
 
 		if (stackToRemove === undefined) {
@@ -64,7 +64,7 @@ export class DinnerPlates {
 		return numberRemoved;
 	}
 
-	print(): void {
+	public print(): void {
 		console.log(this.stacks);
 	}
 
