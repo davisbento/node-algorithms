@@ -10,16 +10,16 @@ npm run test
 
 ## Trees
 
-[Problem Solving](/problem-solving/)
+[Problem Solving](/src/problem-solving/)
 
 ## Trees
 
-[Binary Search Tree](/bst/)
+[Binary Search Tree](/src/bst/)
 
 ## Tables
 
-[Hash Table](/hashtable/)
+[Hash Table](/src/hashtable/)
 
 ## Linked List
 
-[Linked List](/linkedlist/)
+[Linked List](/src/linkedlist/)
