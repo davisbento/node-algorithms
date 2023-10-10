@@ -8,7 +8,7 @@ Just write the .spec file in the same folder as the algorithm and run:
 npm run test
 ```
 
-## Trees
+## Problem Solving
 
 [Problem Solving](/src/problem-solving/)
 
