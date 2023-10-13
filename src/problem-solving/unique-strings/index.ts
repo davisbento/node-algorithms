@@ -1,3 +1,4 @@
+// receive a string and return an array of unique characters
 export const uniqueStrings = (strings: string): string[] => {
 	const uniqueStrings = [] as string[];
 	const charSet = new Map();
@@ -26,3 +27,23 @@ export const uniqueStrings = (strings: string): string[] => {
 };
 
 uniqueStrings('aabbc');
+
+// return TRUE if the string has ONLY unique characters
+// otherwise return FALSE
+export const uniqueStrings2 = (strings: string): boolean => {
+	let result = true;
+
+	const stringAsArray = strings.split('');
+	const charSet = new Set();
+
+	stringAsArray.forEach((char) => {
+		if (charSet.has(char)) {
+			result = false;
+			return;
+		}
+
+		charSet.add(char);
+	});
+
+	return result;
+};
